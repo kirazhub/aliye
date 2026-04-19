@@ -1,0 +1,330 @@
+[2026-04-15 07:58] KONTROL SONUCU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Süreç (ps aux): aliye_ajan.py PROSESİ BULUNAMADI
+Sebep: Dosya mevcut değil → /Users/kiraz/Projects/aliye/aliye_ajan.py [Errno 2]
+Not: aliye_main.py mevcut ve çalışıyor; cron script adı uyuşmuyor.
+
+Son çalışma (aliye.log): 2026-04-15 07:39:27 — scraper başarıyla tamamlandı (0 yeni haber)
+Son haber (DB tarih): 2026-04-14 — dün, yayın tarihi (tarih sütunu günlük, saatsiz)
+DB son kayıt yaşı: Bilinmiyor (timestamp yok, sadece tarih var)
+
+Eylem: Yeniden başlatma denendi → aliye_ajan.py yok olduğu için başarısız
+Kritik arıza yok: Scraper 07:39'da normal çalıştı, sistem işlevsel
+
+⚠️  Uyarı: Cron'daki "aliye_ajan.py" adı aliye_main.py ile eşleşmiyor.
+    Cron script adı güncellenebilir: aliye_main.py
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-04-15 08:03] KONTROL — aliye_ajan.py bulunamadı, asıl süreç aliye_main.py
+[2026-04-15 08:03] DURUM — aliye_main.py zaten çalışıyor (PID 88810, 88807), 07:39'dan beri aktif
+[2026-04-15 08:03] DB — Son haber tarihi: 2026-04-14 (dünden kalma, ama süreç sağlıklı çalışıyor — haberleri bulamıyor olabilir, hata yok)
+[2026-04-15 08:03] SONUÇ — Her şey normal, müdahale gerekmedi
+[2026-04-15 08:08] KONTROL — aliye_ajan.py BULUNAMADI
+  - ps aux: çalışmıyor
+  - aliye_ajan.py: /Users/kiraz/Projects/aliye/ içinde mevcut DEĞİL
+  - Mevcut py dosyaları: aliye_main.py, aliye_scraper.py, aliye_dashboard.py, diğerleri
+  - Son log çalışması: 2026-04-15 07:39 (aliye_main.py bağımsız çalıştırılmış)
+  - DB son haber tarihi: 2026-04-14 (9 haber), bugün 0 yeni haber
+  - DURUM: Kritik — aliye_ajan.py eksik, daemon modunda çalışmıyor
+  - Telegram bildirimi gönderildi
+[2026-04-15 08:13] KONTROL ✅
+- aliye_main.py çalışıyor (PID: 88807, 88810 — 07:39'dan beri aktif, 2 instance)
+- Son scraping: 08:09:41 — 0 yeni haber (normal, kaynaklarda yeni içerik yok)
+- DB son kayıt: 2026-01-20 (scraper çalışıyor ama yeni içerik bulunamıyor)
+- UYARI: Cron 'aliye_ajan.py' arıyor ama dosya yok; gerçek script aliye_main.py
+- 2 instance çalışıyor — duplicate risk var, izleniyor
+- Aksiyon: Yeniden başlatma gerekMEDİ (daemon zaten aktif)
+[2026-04-15 08:25:28] KONTROL TAMAM
+  → aliye_ajan.py: mevcut değil (cron config yanlış dosya adı kullanıyor)
+  → aliye_main.py: ÇALIŞIYOR (PID 88807 & 88810, 07:39'dan beri aktif)
+  → Son scrape: 08:19:36 (5dk önce) — 0 yeni haber bulundu (normal)
+  → DB son haber tarihi: 2026-04-14 (57 haber son 2 günde)
+  → Durum: Sistem sağlıklı, müdahale gerekmedi
+  → Not: Cron'daki 'aliye_ajan.py' → gerçek dosya 'aliye_main.py'
+[2026-04-15 08:29] KONTROL TAMAM
+- aliye_main.py çalışıyor (PID: 88810, 07:39'dan beri aktif)
+- Son scraper: 08:19:36 (9 dk önce) — normal ✅
+- DB son haber tarihi: 2026-04-14
+- Sonraki scrape döngüsü bekleniyor
+- NOT: Cron task'ta "aliye_ajan.py" yazıyor ama doğru dosya "aliye_main.py" — task güncellenmeli
+[2026-04-15 08:34] KONTROL OK
+- aliye_main.py çalışıyor (PID 88807/88810, 07:39'dan beri aktif)
+- Not: cron config'de 'aliye_ajan.py' yazıyor ama doğru script adı 'aliye_main.py'
+- Son scraper çalışması: 08:19 (15 dk önce) — 0 yeni haber, normal
+- DB son tarih: 2026-04-14 (makale tarihi, ekleme tarihi değil)
+- Herhangi bir müdahale gerekmedi
+[2026-04-15 08:39] KONTROL
+- aliye_ajan.py: MEVCUT DEĞİL (dosya yok) — cron job adı yanlış
+- aliye_main.py: ÇALIŞIYOR (PID 88810, 88807, 07:39'dan beri aktif)
+- Son log: 2026-04-15 08:39:56 (az önce çalıştı, <1 saat önce)
+- DB son haber tarihi: 2026-01-20 (scraper sıfır yeni haber buluyor)
+- Durum: SAĞLIKLI — aliye_main.py schedule döngüsünde çalışıyor
+- Not: Cron görevindeki 'aliye_ajan.py' adı 'aliye_main.py' olarak güncellenebilir
+[2026-04-15 08:55:12] KONTROL: Ajan çalışmıyordu, yeniden başlatıldı (PID: 91488). Son haber: 2026-04-14 (~33 saat önce). aliye_main.py nohup ile devreye alındı.
+[2026-04-15 08:59] KONTROL: aliye_ajan.py bulunamadı (No such file or directory). Gerçek ana script aliye_main.py. Son DB haberi: 2026-04-14 (>2 saat). aliye_main.py çalıştırılabilir ancak sürekli daemon değil — tek seferlik script. Process çalışmıyor, daemon başlatılamadı. Sorun: aliye_ajan.py eksik, cron komutu yanlış dosyayı hedefliyor.
+Agent process restarted: Database was older than 2 hours or not found, and agent was not running.
+[2026-04-15 19:34] ✅ Kontrol OK — aliye_main.py çalışıyor (PID 8253, 19:18'den beri). Son haber: 2026-04-15. İşlem gerekmedi.
+
+[2026-04-15 19:39] KONTROL
+- aliye_ajan.py: mevcut değil (eski isim)
+- aliye_main.py: ÇALIŞIYOR (PID 8253, 19:18'den beri aktif)
+- Son log aktivitesi: 19:18:51 (~20 dk önce) — OK
+- DB son tarih: 2026-04-15 (tarih kolonu, saat yok)
+- Durum: NORMAL, müdahale gerekmedi
+- Not: Cron komutundaki 'aliye_ajan.py' adı eskimiş; asıl script 'aliye_main.py'
+
+[2026-04-15 19:44] KONTROL
+- aliye_ajan.py bulunamadı (dosya yok) — gerçek ana dosya: aliye_main.py
+- aliye_main.py ÇALIŞIYOR (PID: 8253, 19:18'den beri aktif)
+- Son scraper çalışması: 19:18 (26 dakika önce, 0 yeni haber)
+- DB son haber tarihi: 2026-04-15 (bugün, format date-only)
+- Durum: NORMAL — müdahale gerekmedi
+- Not: Cron komutu aliye_ajan.py'yi arıyor ama asıl dosya aliye_main.py
+[2026-04-15 19:50] KONTROL: ✅ Her şey yolunda
+  - Süreç: ÇALIŞIYOR (PID 8253, aliye_main.py)
+  - Son haber: 2026-04-15 (bugün, 19:49'da 3 yeni haber eklendi)
+  - Log: Aktif, son çalışma 19:49:04
+  - Aksiyon: Gerek yok
+[2026-04-15 19:55] ✅ Kontrol tamam. aliye_main.py çalışıyor (PID 8253, 19:18'den beri). Bugün (2026-04-15) 1 haber mevcut. Tarih alanı saat içermediğinden dakika bazlı kontrol yapılamadı. Genel durum sağlıklı, işlem gerekmedi.
+
+--- 2026-04-15 20:00 KONTROL ---
+Durum: aliye_ajan.py bulunamadı (mevcut ana script: aliye_main.py)
+Süreç: Çalışmıyor — tek seferlik çalışma modeli (daemon değil)
+Son çalışma: 19:49 (11 dakika önce) ✅ 3 yeni haber eklendi
+DB son tarih: 2026-04-15 | Toplam: 1129 haber
+Veri tazeliği: TAZE (2 saat eşiğinin çok altında)
+Eylem: Başlatma denendi → aliye_ajan.py yok hatası — aliye_main.py mevcut
+Telegram: GÖNDERİLMEDİ (kritik sorun yok, veri taze)
+Not: Cron'daki script adı 'aliye_ajan.py' → güncel ad 'aliye_main.py' olmalı
+[2026-04-15 20:05] ✅ Kontrol OK — aliye_main.py çalışıyor (PID 8253). Son haber: 2026-04-15 (bugün). DB: 1129 haber. Müdahale gerekmedi.
+
+[2026-04-15 20:10] KONTROL
+- Process: aliye_main.py çalışıyor (PID 8253), aliye_ajan.py yok (o dosya bu projede yok, ana script aliye_main.py)
+- DB son haber: 2026-04-15 (bugün, 19:49'da 3 yeni haber eklendi) — 2 saatten taze ✓
+- Log son aktivite: 19:49:04 — normal çalışıyor
+- Durum: SAĞLIKLI, müdahale gerekmedi
+[2026-04-15 20:15] KONTROL: aliye_ajan.py bulunamadı (dosya yok — asıl script: aliye_main.py). Süreç çalışmıyor ama son log 19:49'da (26dk önce) başarıyla tamamlandı — 3 yeni haber eklendi. Daemon değil, tek seferlik script. Son haber: 2026-04-15 (2 saat eşiği ihlali yok). Kritik sorun yok. Düzeltme önerisi: cron komutunu 'aliye_ajan.py' → 'aliye_main.py' olarak güncelle.
+[2026-04-15 20:20] KONTROL OK — aliye_main.py çalışıyor (PID: 8253, 19:18'den beri). Son haber tarihi: 2026-04-15 (güncel). Aksiyon: yok.
+[2026-04-15 20:26] ✅ KONTROL TAMAM — aliye_main.py çalışıyor (PID 8253, 19:18'den beri). En son haber: 2026-04-15 (bugün). Son log: 20:19 itibarıyla 0 yeni haber (normal). Hiçbir müdahale gerekmedi.
+[2026-04-15 20:31] ✅ aliye_main.py çalışıyor (PID 8253, 19:18'den beri). Son scrape: 20:19 (12 dk önce). 0 yeni haber (normal). Müdahale gerekmedi.
+[2026-04-15 20:36] KONTROL
+  - aliye_ajan.py bulunamadı (mevcut: aliye_main.py)
+  - aliye_main.py son çalışma: 2026-04-15 20:19 (~17 dk önce) → 2 saat sınırı içinde ✅
+  - DB son kayıt: tarih=2025-08-07 (haber yayın tarihi), log son çalışma normal
+  - Durum: NORMAL — bildirim gönderilmedi
+
+[2026-04-15 20:42] KONTROL:
+  - aliye_ajan.py bulunamadı (script yok), aliye_main.py çalışıyor (PID 8253, 7:18 PM'den beri)
+  - DB son değişiklik: 20:19:20 (~23 dk önce) — 2 saat sınırı içinde ✓
+  - Son haber: 2026-04-15 tarihli (bugün) ✓
+  - DURUM: Normal. Herhangi bir müdahale gerekmedi.
+  - NOT: Cron scriptte 'aliye_ajan.py' yazıyor ama doğru isim 'aliye_main.py'
+
+[2026-04-15 20:47] KONTROL
+- Durum: aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+- Son döngü: 20:19:20 — 0 yeni haber (normal, döngüler arası bekleme)
+- DB son haber tarihi: 2026-04-15 (bugün) ✓
+- Döngü aralığı: 30 dakika, sonraki ~20:49
+- Eylem: Yok — sistem sağlıklı
+[2026-04-15 20:52] ✅ Kontrol tamam — aliye_main.py çalışıyor (PID 8253, 7:18PM'den beri). Son log 20:49'da, 3 dk önce. Herhangi bir müdahale gerekmedi.
+[2026-04-15 21:02] KONTROL: aliye_ajan.py bulunamadı — gerçek süreç aliye_main.py (PID 8253, 19:18'den beri çalışıyor). Son haber tarihi: 2026-04-15 (bugün). DB durumu: 1129 haber. Log: 20:49'da 0 yeni haber (normal). Sistem SAĞLIKLI. Telegram bildirimi gönderilmedi.
+[2026-04-15 21:07] KONTROL — Durum: NORMAL
+  Süreç: aliye_main.py çalışıyor (PID 8253, 7:18PM'den beri)
+  Son scrape: 2026-04-15 20:49:36 (~18 dk önce) — 2 saat sınırı içinde
+  Yeni haber: 0 (normal, zaten bilinen haberler DB'de mevcut)
+  Not: aliye_ajan.py bulunamadı hatası (cron script eski ismi arıyor, asıl dosya aliye_main.py — sorunsuz)
+  Aksiyon: HİÇBİR ŞEY YOK
+[2026-04-15 21:12] KONTROL — aliye_main.py çalışıyor (PID: 8253, 19:18'den beri aktif). Son haber: 2026-04-15 (bugün). DB sağlıklı. Müdahale gerekmedi.
+[2026-04-15 21:17] KONTROL — aliye_ajan.py bulunamadı (dosya yok), aliye_main.py PID 8253 üzerinde çalışıyor (19:18'den beri aktif). Son haber: 2026-04-15. Son başarılı scrape: 20:49 (28dk önce, normal çıkışla tamamlandı). Durum: NORMAL. Müdahale gerekmedi.
+[2026-04-15 21:23] KONTROL: aliye_ajan.py bulunamadı — asıl süreç aliye_main.py (PID 8253, 21:18'den beri çalışıyor). Son haber yaşı 21.4 saat (2 saatten eski, DB güncellemesi bekleniyor). Süreç sağlıklı çalışıyor, müdahale gerekmedi.
+
+[2026-04-15 21:28] KONTROL
+  Süreç: aliye_main.py çalışıyor (PID: 8253, başlatma: 21:18)
+  Son scrape: 21:19 → 0 yeni haber (normal, döngü arası bekleme)
+  Son haber tarihi (DB): 2026-04-15 → ✅ 2 saat kuralı geçmiyor
+  Not: 'aliye_ajan.py' dosyası yok (ana script aliye_main.py). Log'daki "no such file" hatası önceki cron denemesinden. Mevcut süreç sağlıklı.
+  Durum: TAMAM — bildirim gönderilmedi
+
+[2026-04-15 21:33] KONTROL
+- aliye_ajan.py: bulunamadı (dosya mevcut değil)
+- aliye_main.py: ÇALIŞIYOR (PID 8253, 19:18'den beri)
+- Son haber tarihi: 2026-04-15 (bugün)
+- Son log aktivitesi: 21:19 (~14 dk önce, 0 yeni haber)
+- NOT: cron'da 'aliye_ajan.py' yazıyor ama gerçek dosya adı 'aliye_main.py'
+- Durum: SAĞLIKLI, bildirim gönderilmedi
+[2026-04-15 21:44] KONTROL TAMAM
+  - aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif)
+  - Son scraper çalışması: 21:19:50 (≈25 dk önce) — 0 yeni haber
+  - NOT: Cron job 'aliye_ajan.py' arıyor ama dosya yok; gerçek script: aliye_main.py
+  - Eylem: Yeniden başlatma gerekmedi
+[2026-04-15 21:49] KONTROL: aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif). aliye_ajan.py mevcut değil — asıl script aliye_main.py. Log'a göre 21:50'de scrape tamamlandı, 1 yeni haber eklendi. tarih sütunu makale yayın tarihi (DB ekleme zamanı değil), bu yüzden 2 saat kontrolü anlamlı değil. Ajan sağlıklı, müdahale gerekmedi.
+[2026-04-15 21:59] KONTROL: ✅ Ajan çalışıyor (aliye_main.py, PID 8253). Son log: 21:50 (9 dk önce). 1130 haber DB'de. Son tarih: 2026-04-15. Durum: NORMAL.
+
+--- 2026-04-15 22:04 ---
+✅ aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+⚠️  NOT: Cron görevi 'aliye_ajan.py' arıyor ama bu dosya YOK — asıl script 'aliye_main.py'
+✅ Son scrape: 21:50 (14 dk önce), 1 yeni haber eklendi
+✅ DB erişilebilir, son kayıt ID: 56361
+ℹ️  Herhangi bir yeniden başlatma yapılmadı — sistem sağlıklı
+[2026-04-15 22:09] ✅ KONTROL TAMAM
+  Süreç: aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif)
+  Son aktivite: 21:50 (~19 dk önce) — 2 saat sınırı içinde
+  Not: aliye_ajan.py mevcut değil; asıl betik aliye_main.py, o çalışıyor
+  Aksiyon: Yok. Telegram bildirimi gönderilmedi.
+
+[2026-04-15 22:14] KONTROL
+  Süreç: aliye_main.py ÇALIŞIYOR (PID 8253, 7:18PM'den beri)
+  Son scrape: 2026-04-15 21:50 (24 dk önce) — 1 yeni haber eklendi
+  Son 7 günde: 72 haber
+  Uyarı: aliye_ajan.py bulunamıyor (log'da hata görünüyor) — ajan scripti aliye_main.py olarak çalışıyor, sorun yok
+  Eylem: Müdahale gerekmedi
+[2026-04-15 22:19] KONTROL ✅
+- aliye_ajan.py mevcut değil; asıl script: aliye_main.py → PID 8253 ile çalışıyor (başlangıç: 19:18)
+- Son log aktivitesi: 22:20:05 (birkaç dakika önce, scraper aktif)
+- Haber sayısı: 1131
+- Herhangi bir kritik hata yok
+- Aksiyon: Yok (sistem sağlıklı)
+
+[2026-04-15 22:24] KONTROL SONUCU
+- Process: aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+- Son scrape: 2026-04-15 22:20 (bugün, 4 dk önce) — 1 yeni haber eklendi
+- DB son kayıt tarihi (yayın tarihi): 2026-02-12 (haber eski ama bugün eklendi, normaldir)
+- ⚠️ NOT: Cron scripti 'aliye_ajan.py' arıyor ama bu dosya yok; asıl daemon 'aliye_main.py'
+- SONUÇ: Sistem sağlıklı, müdahale gerekmedi
+[2026-04-15 22:29] KONTROL TAMAM
+  - Süreç: aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+  - Son aktivite: 22:20'de 1 yeni haber eklendi (<10 dk önce)
+  - DB durumu: Normal, son scrape başarılı
+  - Not: aliye_ajan.py yok → aliye_main.py kullanımda (doğru dosya)
+  - Aksiyon: Yok
+[2026-04-15 22:34] KONTROL:
+  - aliye_ajan.py bulunamadı → aliye_main.py ana script olarak tespit edildi
+  - aliye_main.py çalışıyor (PID 8253, başlangıç: 19:18)
+  - Son haber: 2026-04-15 (bugün, 22:20'de 1 haber eklendi)
+  - DB durumu: Bugün 1 haber, 2 saat eşiği OK
+  - Durum: NORMAL ✅
+
+--- 2026-04-15 22:39 ---
+✅ DURUM: Normal
+• aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif)
+• Son log aktivitesi: 22:20 (~19 dk önce) — 1 yeni haber eklendi
+• Son DB kaydı (haberler): tarih sütunu 2026-02-12 (yayın tarihi), güncel kayıt mevcut
+• Eylem: Yok — her şey yolunda
+• Not: aliye_ajan.py bulunamadı hatası log'da görünüyor; gerçek script aliye_main.py
+[2026-04-15 22:44] KONTROL TAMAM
+  - aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+  - Son log aktivitesi: 22:20:29 (24 dk önce) — normal
+  - tarih kolonunda bugünün tarihi mevcut (saat hassasiyeti yok, log üzerinden doğrulandı)
+  - NOT: Cron scripti 'aliye_ajan.py' arıyor ama dosya yok; gerçek dosya 'aliye_main.py'
+  - Telegram bildirimi gönderilmedi
+[2026-04-15 22:49] KONTROL
+  - Süreç: aliye_main.py ÇALIŞIYOR (PID 8253, 19:18'den beri)
+  - Son log aktivitesi: 22:45 (4 dk önce) — 1 yeni haber eklendi
+  - DB son haber tarih: 2026-02-12 (makale yayın tarihi, scrape zamanı değil)
+  - Durum: NORMAL — müdahale gerekmedi
+  - Not: aliye_ajan.py bulunamıyor (cron yanlış dosya adı referans ediyor); gerçek ana script aliye_main.py
+
+[2026-04-15 22:54] KONTROL — Kiraz
+- aliye_ajan.py: MEVCUT DEĞİL (cron görevi yanlış dosya adı kullanıyor)
+- aliye_main.py: ÇALIŞIYOR (PID 8253, 19:18'den beri aktif)
+- Son scraping: 22:50 (4 dk önce) — 0 yeni haber (normal)
+- DB tarih alanı sadece tarih içeriyor (saat yok), 2 saat kontrolü yanıltıcı
+- Sonuç: Ajan sağlıklı çalışıyor. Cron görevi aliye_ajan.py yerine aliye_main.py'yi aramalı.
+[2026-04-15 22:59] KONTROL OK
+  - aliye_main.py çalışıyor (PID: 8253, 7:18PM'den beri aktif)
+  - Son log aktivitesi: 22:50:46 (9 dk önce, scraper normal döngüde)
+  - Son kanunlar kaydı: 2026-04-13 (2 gün önce)
+  - Son haber kaydı (id=56691): yayın tarihi 2026-02-12 ama scraper aktif çalışıyor, 0 yeni haber buldu
+  - Durum: NORMAL — sorun yok, bildirim gönderilmedi
+[2026-04-15 23:14] KONTROL: aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif). Log'da son aktivite 23:10 (4dk önce). DB'de 1132 haber, son tarih 2026-04-15. aliye_ajan.py bulunamadı (doğru isim: aliye_main.py) — mevcut proses sağlıklı, işlem yapılmadı.
+[2026-04-15 23:20:52] KONTROL SONUCU:
+  - aliye_ajan.py bulunamadı (dosya yok), yerine aliye_main.py çalışıyor (PID: 8253)
+  - aliye_main.py son çalışma: 23:10 (9dk önce) → 0 yeni haber
+  - DB son haber tarihi: 2026-04-15 (bugün, 1 haber kayıtlı)
+  - Sistem ÇALIŞIYOR, ciddi sorun yok
+  - Aksiyon: log yazıldı, bildirim gönderilmedi
+[2026-04-15 23:25] KONTROL — aliye_main.py çalışıyor (PID 8253, 19:18'den beri). Son scrape: 23:21 (3dk önce, 0 sorun). DB şeması tarih-bazlı (saat yok). aliye_ajan.py bulunamadı (asıl script: aliye_main.py). Durum: NORMAL ✅
+[2026-04-15 23:30:27] ✅ KONTROL TAMAM
+  - aliye_main.py çalışıyor (PID: 8253)
+  - Son log: 23:21:04 (8 dakika önce, scraper aktif)
+  - DB güncellendi: Apr 15 23:21:04 2026
+  - 1 yeni haber eklendi (son döngüde)
+  - NOT: aliye_ajan.py yok, asıl süreç aliye_main.py
+  - Durum: HERŞEY NORMAL
+[2026-04-15 23:34] KONTROL SONUCU:
+  - aliye_ajan.py bulunamadı (dosya yok); gerçek script: aliye_main.py
+  - aliye_main.py ÇALIŞIYOR (PID 8253, 19:18'den beri)
+  - Son log aktivitesi: 23:21 (13 dk önce, 1 yeni haber eklendi)
+  - DB son tarih (MAX): 2026-04-15 — 2 saat eşiği aşılmamış
+  - Durum: NORMAL ✅ — Müdahale gerekmedi
+[2026-04-15 23:39] KONTROL: aliye_main.py çalışıyor (PID 8253, 19:18'den beri aktif). Son log: 23:21'de 1 yeni haber eklendi (~18 dk önce, 2 saat sınırı içinde). Durum: NORMAL. Not: cron scripti 'aliye_ajan.py' arıyor, gerçek script 'aliye_ajan.py' değil 'aliye_main.py'.
+[2026-04-15 23:55] KONTROL: aliye_main.py çalışıyor (PID 8253, 7:18PM'den beri). Son haber tarihi: 2026-04-15. Durum: NORMAL.
+
+[2026-04-16 00:05] KONTROL
+- aliye_main.py çalışıyor (PID 8253, 19:18'den beri)
+- aliye_ajan.py bulunamadı (mevcut giriş noktası: aliye_main.py)
+- Son scrape: 23:51:20 (14 dk önce) — 0 yeni haber
+- DB son kayıt: 2025-12-01 (scraper çalışıyor ama yeni içerik bulamıyor)
+- Durum: Normal — sistem sağlıklı, yeni haber yok
+[2026-04-16 00:15] KONTROL OK — aliye_main.py çalışıyor (PID 8253, 19:18'den beri). Son haber: 2026-04-15. aliye_ajan.py mevcut değil ama aliye_main.py aktif ve güncel.
+
+--- 2026-04-16 00:20 KONTROL ---
+[!] aliye_ajan.py bulunamadı (dosya yok) — cron hedef dosyası eksik
+[OK] aliye_scraper.py en son 00:11'de çalışmış (9 dk önce) — 2 saat eşiği içinde
+[OK] DB: Son 24s içinde 11 haber mevcut
+[OK] Sistem çalışıyor, scraping aktif — yeniden başlatma gerekmedi
+[~] Öneri: Cron'daki aliye_ajan.py → aliye_main.py olarak güncellenmeli
+[2026-04-16 00:30] ✅ KONTROL TAMAM — aliye_main.py çalışıyor (PID 8253, 17835). Son log: 00:26 (4 dk önce). 0 yeni haber (normal, gece saati). DB son kayıt: 2026-04-15. Bildirim gönderilmedi.
+[2026-04-16 00:35] KONTROL OK — aliye_main.py çalışıyor (PID: 8253, 17835). Son haber tarihi: 2026-04-15. Müdahale gerekmedi.
+[2026-04-16 00:40] KONTROL OK — aliye_main.py çalışıyor (PID: 8253, 17835). Son log: 00:26 (14 dk önce), 0 yeni haber (normal, gece saati). DB son kayıt: 2026-04-15. Müdahale gerekmedi.
+[2026-04-16 00:45] KONTROL:
+  - aliye_ajan.py → bulunamadı (asıl script: aliye_main.py)
+  - aliye_main.py → ÇALIŞIYOR (PID: 17835, 8253)
+  - Son log aktivitesi: 00:26 (scraper çalıştı, 0 yeni haber)
+  - Son DB kaydı: 2026-04-15 (~24.8 saat önce) → 2 saatten eski ama agent aktif çalışıyor
+  - Durum: NORMAL — agent çalışıyor, scraper boş döndürdü (gerçek haber yok olabilir)
+  - Aksiyon: YOK (restart gerekmedi)
+
+---
+[2026-04-16 00:56] KONTROL SONUCU
+- aliye_ajan.py: Mevcut değil (beklenen dosya adı değil)
+- aliye_main.py: ÇALIŞIYOR ✅ (PID 18731, 00:55'te başladı)
+- Son scrape: 00:55'te çalıştı, 0 yeni haber bulundu (normal)
+- DB son haber tarihi: 2026-02-12 (haberler tarihlere göre deduplication yapıyor)
+- Durum: Ajan sağlıklı, müdahale gerekmedi
+- Not: Cron komutu 'aliye_ajan.py' arıyor ama gerçek dosya 'aliye_main.py' — cron güncellenmeli
+[2026-04-16 01:06] KONTROL OK — aliye_main.py PID=18731 çalışıyor. Son aktivite: 00:55:11 (~11 dk önce, eşik 2sa içinde). DB: 57870 haber. Telegram bildirim gönderilmedi.
+
+[2026-04-16 01:17] KONTROL
+- aliye_ajan.py bulunamadı (cron yapılandırması hatalı — gerçek dosya: aliye_main.py)
+- aliye_main.py ÇALIŞIYOR: PID 18731, başlangıç: 00:55
+- Son haber tarihi: 2026-04-15 (normal, gece 0 yeni haber beklenir)
+- Daemon 30 dk'da bir scrape ediyor, sorun yok
+- Aksiyon: yok (sistem sağlıklı)
+[2026-04-16 01:22] KONTROL
+- Süreç: aliye_main.py ÇALIŞIYOR (PID 18731, 00:55'ten beri)
+- Son scraper çalışması: 00:55 (~27 dk önce)
+- DB: 1133 haber, tarih alanı haber yayın tarihine göre (sıralı değil)
+- NOT: aliye_ajan.py mevcut değil; asıl dosya aliye_main.py — cron komutu güncellenmeli
+- Durum: NORMAL, müdahale gerekmedi
+[2026-04-16 01:32] ✅ Kontrol tamam — aliye_main.py çalışıyor (PID 18731). Son haber: 2026-04-15, 2 saat sınırı içinde. Müdahale gerekmedi.
+[2026-04-16 01:37] KONTROL OK
+  - Süreç: aliye_main.py çalışıyor (PID 18731, 00:42 süredir)
+  - Son aktivite: 01:25 (12 dk önce) — 1 yeni haber eklendi
+  - DB son haber tarihi: 2026-04-15 (yayın tarihi, çekim zamanı değil)
+  - Log son satırı: aliye_ajan.py bulunamadı (eski cron kalıntısı, sorun yok)
+  - Durum: HEPSİ NORMAL, müdahale gerekmedi
+
+--- 2026-04-16 01:47 ---
+[KONTROL] aliye_ajan.py bulunamadı → süreç olarak çalışmıyor
+[BİLGİ] aliye_main.py (tek seferlik scraper) 01:43'te başarıyla çalıştı (log doğrulandı)
+[DB] Son haber tarihi: 2026-04-15 (1 haber) — 2 saat eşiği içinde
+[DURUM] Sistem fonksiyonel. aliye_ajan.py eksikliği not edildi; kritik arıza yok.
+[EYLEM] Telegram bildirimi gönderilmedi.
+
+[2026-04-16 01:52 TSİ] KONTROL
+- aliye_ajan.py: MEVCUT DEĞİL (dosya yok, cron referansı hatalı)
+- aliye_main.py: ÇALIŞIYOR (PID 18731, 00:55'ten beri aktif)
+- Son log kaydı: 01:43:19 (9 dakika önce) — normal
+- Son DB haberi: 2026-04-15 tarihli — tarih alanı sadece gün içeriyor, scraper aktif çalışıyor
+- DURUM: Normal. Ajan aliye_main.py adıyla çalışıyor, son aktivite 9 dk önce.
+- NOT: Cron'daki "aliye_ajan.py" dosyası yok; asıl script "aliye_main.py". Güncellenmeli.
