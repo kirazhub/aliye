@@ -70,17 +70,12 @@ def get_haberler(limit: int = 100, kategori: Optional[str] = None,
         if where:
             query += " WHERE " + " AND ".join(where)
         
-        # Öncelik sırasına göre: Göktürk/Kemerburgaz önce, sonra diğer öncelikli bölgeler
+        # En yeni haberler yukarıda (aşağı doğru akan feed)
         query += """
             ORDER BY 
-                CASE 
-                    WHEN ilce LIKE '%Göktürk%' OR ilce LIKE '%Kemerburgaz%' THEN 1
-                    WHEN ilce LIKE '%Eyüp%' OR ilce LIKE '%Trakya%' OR 
-                         ilce LIKE '%Edirne%' OR ilce LIKE '%Tekirdağ%' THEN 2
-                    ELSE 3
-                END,
+                tarih DESC,
                 onem_skoru DESC,
-                tarih DESC
+                id DESC
             LIMIT ?
         """
         params.append(limit)
