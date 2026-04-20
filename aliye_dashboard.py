@@ -50,31 +50,31 @@ st.markdown(
     padding: 12px 16px; margin: 8px 0; border-radius: 5px;
 }
 .card-title {
-    font-weight: 700; font-size: 1.05em; color: #f0f0f0; margin-bottom: 5px;
+    font-weight: 700; font-size: 1.575em; color: #f0f0f0; margin-bottom: 5px;
 }
 .card-ozet {
-    color: #aaa; font-size: 0.88em; margin-bottom: 8px;
+    color: #aaa; font-size: 1.32em; margin-bottom: 8px;
 }
 .badge-kaynak {
     display: inline-block;
     background: #1e2a4a; color: #7fa8ff;
-    padding: 2px 9px; border-radius: 10px; font-size: 0.78em;
+    padding: 2px 9px; border-radius: 10px; font-size: 1.17em;
     margin-right: 6px;
 }
 .badge-ilce {
     display: inline-block;
     background: #1a3028; color: #66bb6a;
-    padding: 2px 9px; border-radius: 10px; font-size: 0.78em;
+    padding: 2px 9px; border-radius: 10px; font-size: 1.17em;
     margin-right: 6px;
 }
 .badge-kat {
     display: inline-block;
     background: #2a2040; color: #ce93d8;
-    padding: 2px 9px; border-radius: 10px; font-size: 0.78em;
+    padding: 2px 9px; border-radius: 10px; font-size: 1.17em;
     margin-right: 6px;
 }
-.meta-text { color: #666; font-size: 0.78em; margin-right: 6px; }
-.haber-link { color: #4a9eff; font-size: 0.82em; text-decoration: none; }
+.meta-text { color: #666; font-size: 1.17em; margin-right: 6px; }
+.haber-link { color: #4a9eff; font-size: 1.23em; text-decoration: none; }
 .haber-link:hover { text-decoration: underline; }
 
 /* ---- legal cards ---- */
@@ -84,7 +84,7 @@ st.markdown(
     background: #18150a;
     padding: 14px 18px; margin: 10px 0; border-radius: 5px;
 }
-.legal-title { font-weight: 700; font-size: 1.08em; color: #fff59d; }
+.legal-title { font-weight: 700; font-size: 1.62em; color: #fff59d; }
 
 /* ---- ilçe mini cards ---- */
 .ilce-mini {
